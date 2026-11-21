@@ -21,5 +21,16 @@ export function getCommands(): Record<string, CLICommand> {
       callback: commandExit,
     },
     // can add more commands here
+    help: {
+        name: "help",
+        description: "Display available commands",
+        callback: (commands: Record<string, CLICommand>) => {
+            console.log("Usage:");
+            for (const commandName in commands) {
+                const command = commands[commandName];
+                console.log(`- ${command.name}: ${command.description}`);
+            }
+        }
+    }
   };
 }

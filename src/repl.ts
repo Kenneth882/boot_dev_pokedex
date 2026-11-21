@@ -31,6 +31,10 @@ export function startREPL(){
              if(first==getCommands().exit.name[0]){
                 getCommands().exit.callback(getCommands());
              }
+             else if(first==getCommands().help.name[0]){
+                console.log("Welcome to the Pokedex!");
+                getCommands().help.callback(getCommands());
+             }
              else{
                 console.log(`Unknown command: ${cleanedInput[0]}`);
              }
